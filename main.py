@@ -30,18 +30,7 @@ def login():
             session['loggedin'] = True
             session['id'] = loginstd['id']
             session['username'] = loginstd['username']
-            # sendemail ="hopehelps36@gmail.com"
-            
-            # print(email)
-            # password= "Zuber123"
-            # message ="You just Logged Into HOPE"
-
-            # server =smtplib.SMTP('smtp.gmail.com', 587)
-            # server.starttls ()
-            # server.login (sendemail, password)
             print ("Login success")
-            # server.sendmail (sendemail, email, message)
-            # print ("Email has been sent to ", email)
             return render_template('index.html', username= username)
         else:
             msg = 'Incorrect username / password !'
@@ -96,13 +85,7 @@ def enroll():
         cv2.destroyAllWindows()
     return render_template('enroll.html')
 
-# @app.route('/logout')
-# def logout():
-#     session.pop('loggedin', None)
-#     session.pop('id', None)
-#     session.pop('username', None)
-#     return redirect(url_for('login'))
-  
+
 @app.route('/register', methods =['GET', 'POST'])
 def register():
     msg = ''
